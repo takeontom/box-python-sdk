@@ -216,7 +216,7 @@ class Search(BaseEndpoint):
         }
         if ancestor_folders:
             params.update({
-                'ancestor_folder_ids': ','.join([folder.object_id for folder in ancestor_folders])
+                'ancestor_folder_ids': ','.join([str(folder.object_id) for folder in ancestor_folders])
             })
         if file_extensions:
             params.update({'file_extensions': ','.join(file_extensions)})
